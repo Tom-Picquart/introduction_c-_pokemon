@@ -8,15 +8,15 @@ int main() {
     string starter;
     Pokemon_Party party;
     Pokedex *pokedex= Pokedex::getInstance();
-    std::cout<<"choose a starter";
+    std::cout<<"choose a starter (any Pokemon)";
     std::cin>>starter;
     Pokemon Starter= pokedex->GetPokemonByName(starter);
     party.addToParty(Starter);
     Pokemon Pikachu= pokedex->GetPokemonByName("Pikachu");
     Pokemon mystery= pokedex->GetPokemonById(130);
-    party.addToParty(mystery);
-    party.addToParty(Pikachu);
-    party.removeFromParty(2);
+    mystery.attacks(Pikachu);
+    Pikachu.displayInfo();
+    party.catchPokemon(mystery);
+    Pikachu.displayInfo();
     party.showParty();
-
 }

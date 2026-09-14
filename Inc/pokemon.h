@@ -7,6 +7,7 @@
 #include <string>
 using std::string;
 
+
 class Pokemon {
     private:
         int id;
@@ -35,7 +36,6 @@ class Pokemon {
         double getAttack() const;
         double getDefense() const;
         int getNumberOfPokemon() const;
-
 
 
     //destructeur

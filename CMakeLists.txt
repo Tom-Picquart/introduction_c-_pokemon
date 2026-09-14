@@ -16,8 +16,6 @@ add_executable(tictactoe Src/main.cpp
         Inc/Pokedex.h
         Src/Pokemon_Party.cpp
         Inc/Pokemon_Party.h
-        Src/Pokeball.cpp
-        Inc/Pokeball.h
 )
 target_link_libraries(tictactoe
         sfml-graphics

@@ -61,6 +61,8 @@ Pokemon Pokedex::GetPokemonByName(string name) {
             return pokemon;
         }
     }
+    throw std::runtime_error( name+" is not a valid Pokemon");
+
 }
 
 Pokedex::~Pokedex() {

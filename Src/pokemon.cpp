@@ -79,3 +79,4 @@ double Pokemon::getDefense() const {
 int Pokemon::getNumberOfPokemon() const {
     return numberOfPokemon;
 }
+
