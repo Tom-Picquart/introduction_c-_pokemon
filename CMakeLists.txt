@@ -16,6 +16,24 @@ add_executable(tictactoe Src/main.cpp
         Inc/Pokedex.h
         Src/Pokemon_Party.cpp
         Inc/Pokemon_Party.h
+        Inc/GameState.h
+        Inc/Game.h
+        Inc/StartState.h
+        Src/StartState.cpp
+        Inc/SelectPokemonState.h
+        Src/SelectPokemonState.cpp
+        Inc/BattleState.h
+        Src/BattleState.cpp
+        Inc/GameOverState.h
+        Src/GameOverState.cpp
+        Src/Game.cpp
+        Src/RestState.cpp
+        Inc/RestState.h
+        Src/PokemonSprite.cpp
+        Inc/PokemonSprite.h
+        Inc/UI.h
+        Src/UI.cpp
+
 )
 target_link_libraries(tictactoe
         sfml-graphics

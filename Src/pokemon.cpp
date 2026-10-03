@@ -1,7 +1,7 @@
 //
 // Created by tompi on 10/09/2026.
 //
-#include "../Inc/pokemon.h"
+#include "../Inc/Pokemon.h"
 #include <iostream>
 
 int Pokemon::numberOfPokemon=0;
@@ -30,12 +30,16 @@ void Pokemon::displayInfo() const {
 }
 
 void Pokemon::attacks(Pokemon &target) {
+    if (isKO()) {
+        std::cout << name << " is not able to fight!" << std::endl;
+        return;
+    }
     std::cout << name << " attacks " << target.name <<std::endl;
     if (attack>target.defense) {
         target.hitPoint=target.hitPoint-(attack-target.defense);
         if (target.hitPoint<0) {
             target.hitPoint=0;
-            std::cout << target.name << " died" << std::endl;
+            std::cout << target.name << " was defeated" << std::endl;
         }
         else {
             std::cout << target.name << " took " << attack-target.defense << " damage" <<std::endl;
@@ -46,7 +50,6 @@ void Pokemon::attacks(Pokemon &target) {
     else {
         std::cout << target.name << " took no damage"  <<std::endl;
     }
-
 }
 
 
@@ -57,8 +60,6 @@ int Pokemon::getId() const {
 string Pokemon::getName() const {
     return name;
 }
-
-
 
 double Pokemon::getMaxHitPoint() const {
     return maxHitPoint;
@@ -80,3 +81,12 @@ int Pokemon::getNumberOfPokemon() const {
     return numberOfPokemon;
 }
 
+
+bool Pokemon::isKO() const {
+    return hitPoint==0;
+}
+
+void Pokemon::heal()
+{
+    hitPoint = maxHitPoint;
+}

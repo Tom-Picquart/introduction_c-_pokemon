@@ -1,10 +1,18 @@
-## introduction_c++_pokemon
+# introduction_c++_pokemon
 TP introduction au c++
 
 
-#fonctionnalités:  
--pokemons ayant un id, un nom, des points de vie, une valeur d'attaque et de défense  
--fonction d'attaque (d'un pokemon vers un autre)  
--pokedex fonctionnel contenant tous les pokemons jusqu'à la 6ème génération  
--une party à laquelle on peut ajouter et retirer des pokemons  
--compile  
+## fonctionnalités:
+- interface graphique complète avec SFML
+- écran de départ
+- sélection d'un starter parmi trois pokémons générés aléatoirement
+- série de combat en 1 contre 1 avec des pokémons jusqu'à défaite
+- choix d'attaquer ou de fuir à chaque tour de combat
+- état de repos après chaque combat
+- possibilité de capturer un pokemon ennemi vaincu (limite à 6 pokémons, impossible de retirer un pokemon de l'équipe)
+- nombre limité de soins par partie
+- écran de game over
+
+## pattern state:
+
+![alt text](state.png)

@@ -13,13 +13,15 @@ private:
     int party_size_max=6;
 public:
 
-    Pokemon_Party();
-    void catchPokemon(Pokemon pokemon);
-    void addToParty(Pokemon pokemon);
-    void removeFromParty( int index);
-    void sendtoBattle(Pokemon pokemon);
-    void returnToParty(Pokemon pokemon);
-    void showParty();
+    Pokemon_Party(string pokemon1, string pokemon2, string pokemon3, string pokemon4, string pokemon5 , string pokemon6);
+    void addToParty(const Pokemon& pokemon);
+    void sendtoBattle(int index);
+    Pokemon* getFirstPokemon();
+    Pokemon* getPokemon(int index);
+    void healPokemon(int index);
+    void healAll();
+    void showPartyHP() const;
+    int getSize() const;
     Pokemon GetPokemonByName(string name) override;
     Pokemon GetPokemonById(int id) override;
 

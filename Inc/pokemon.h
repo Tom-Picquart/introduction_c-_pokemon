@@ -7,7 +7,6 @@
 #include <string>
 using std::string;
 
-
 class Pokemon {
     private:
         int id;
@@ -27,6 +26,8 @@ class Pokemon {
         //méthodes
         void attacks( Pokemon &target);
         void displayInfo() const;
+        bool isKO() const;
+        void heal();
 
         //getters
         int getId() const;
@@ -36,6 +37,7 @@ class Pokemon {
         double getAttack() const;
         double getDefense() const;
         int getNumberOfPokemon() const;
+
 
 
     //destructeur

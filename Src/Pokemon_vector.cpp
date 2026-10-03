@@ -8,8 +8,8 @@
 
 
 void Pokemon_vector::displayPokemonList() {
-    for (Pokemon pokemon : arrayOfPokemon) {
-        std::cout <<"Pokemon number " << pokemon.getId() <<" : " << pokemon.getName() << std::endl;
+    for (Pokemon *pokemon : arrayOfPokemon) {
+        std::cout <<"Pokemon number " << pokemon->getId() <<" : " << pokemon->getName() << std::endl;
     }
 }
 

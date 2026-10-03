@@ -6,11 +6,11 @@
 #define TICTACTOE_POKEMON_VECTOR_H
 #include <string>
 #include <vector>
-#include "pokemon.h"
+#include "Pokemon.h"
 
 class Pokemon_vector {
 public:
-    std::vector<Pokemon> arrayOfPokemon;
+    std::vector<Pokemon*> arrayOfPokemon;
     virtual Pokemon GetPokemonByName(string name) = 0;
     virtual Pokemon GetPokemonById(int id) = 0;
     void displayPokemonList();

@@ -3,7 +3,7 @@
 //
 
 #include "../Inc/Pokedex.h"
-#include "../Inc/pokemon.h"
+#include "../Inc/Pokemon.h"
 #include <string>
 #include <fstream>
 #include <iostream>
@@ -37,31 +37,33 @@ Pokedex::Pokedex(string fileName):Pokemon_vector() {
         double attackValue = std::stod(lineData.at(6));
         double hitPoint = std::stod(lineData.at(5));
         double defenseValue = std::stod(lineData.at(7));
-        arrayOfPokemon.push_back( Pokemon(id,lineData.at(1),hitPoint,hitPoint,attackValue,defenseValue));
+        Pokemon* pokemon= new Pokemon(id,lineData.at(1),hitPoint,hitPoint,attackValue,defenseValue );
+        arrayOfPokemon.push_back(pokemon);
     }
 }
 
 Pokedex *Pokedex::getInstance(){
     if (instance== NULL) {
-        instance = new Pokedex("C://Users//tompi//Desktop//cours//c++//TP//pokedex.csv");
+        instance = new Pokedex("..\\pokedex.csv");
     }
     return instance;
 }
 
 Pokemon Pokedex::GetPokemonById(int id) {
-    for (Pokemon pokemon : arrayOfPokemon) {
-        if (pokemon.getId() == id) {
-            return pokemon;
+    for (Pokemon* pokemon : arrayOfPokemon) {
+        if (pokemon->getId() == id) {
+            return *pokemon;
         }
     }
+
 }
+
 Pokemon Pokedex::GetPokemonByName(string name) {
-    for (Pokemon pokemon : arrayOfPokemon) {
-        if (pokemon.getName() == name) {
-            return pokemon;
+    for (Pokemon *pokemon : arrayOfPokemon) {
+        if (pokemon->getName() == name) {
+            return *pokemon;
         }
     }
-    throw std::runtime_error( name+" is not a valid Pokemon");
 
 }
 
