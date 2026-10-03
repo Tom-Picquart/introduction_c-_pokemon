@@ -13,6 +13,24 @@ TP introduction au c++
 - nombre limité de soins par partie
 - écran de game over
 
+## structure du projet
+Game
+ │
+ ├── GameState
+ │     ├── StartState
+ │     ├── SelectPokemonState
+ │     ├── BattleState
+ │     ├── RestState
+ │     └── GameOverState
+ │
+ ├── Pokemon_Party
+ │     └── pokemon
+ │
+ ├── PokemonSprite
+ │
+ └── Pokedex
+
+ 
 ## pattern state:
 
 ![alt text](state.png)
